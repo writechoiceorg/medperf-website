@@ -1,4 +1,4 @@
-# :warning: Copied from previous FL-Tutorial page :warning:
+# :warning: Copied from [previous FL-Tutorial page](https://intel.github.io/fl-tutorial/) :warning:
 
 # Federated Learning for Healthcare
 
