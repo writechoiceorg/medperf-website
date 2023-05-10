@@ -4,13 +4,13 @@ Welcome to the Federated Learning tutorial that will be run in conjunction with 
 
 Federated Learning (FL) is increasingly important in privacy sensitive domains, such as healthcare, where sharing of private/patient data is a barrier to building models that generalize well in the real world and minimize bias.
 
-In this tutorial, we will be presenting the **Co**mprehensive **F**ederated **E**cosystem (**COFE**), which comprises of the following components:
+In this tutorial, we will be presenting the **CO**mprehensi**V**e **F**ederated **E**cosystem **F**or **E**veryone (**COVFEFE**), which comprises of the following components:
 
 1. The Generally Nuanced Deep Learning Framework (GaNDLF) - [gandlf.org](https://gandlf.org)
 2. MedPerf - [www.medperf.org](https://www.medperf.org/)
 3. OpenFL - [github.com/securefederatedai/openfl](https://github.com/securefederatedai/openfl/)
 
-In 2021, COFE was used to conduct the largest to-date real world federation, with a network of 71 healthcare institutions around the world, [the Federated Tumor Segmentation (FeTS) Initiative](http://www.fets.ai/) [[ref](https://doi.org/10.1038/s41467-022-33407-5)]. Furthermore, leveraging the collaborators of this real-world FL initiative, the **first ever FL challenge** was conducted, which focused on the tumor segmentation task, called [The FeTS 2021 challenge](https://miccai2021.fets.ai/) [[ref](https://doi.org/10.48550/arXiv.2105.05874)], which was conducted again in 2022 [[ref](https://synapse.org/fets)]. Taking into consideration the value and the interest of the community in this new paradigm for data private multi-institutional collaborations and building upon our experience, we organize this tutorial on FL for healthcare.
+In 2021, COVFEFE was used to conduct the largest to-date real world federation, with a network of 71 healthcare institutions around the world, [the Federated Tumor Segmentation (FeTS) Initiative](http://www.fets.ai/) [[ref](https://doi.org/10.1038/s41467-022-33407-5)]. Furthermore, leveraging the collaborators of this real-world FL initiative, the **first ever FL challenge** was conducted, which focused on the tumor segmentation task, called [The FeTS 2021 challenge](https://miccai2021.fets.ai/) [[ref](https://doi.org/10.48550/arXiv.2105.05874)], which was conducted again in 2022 [[ref](https://synapse.org/fets)]. Taking into consideration the value and the interest of the community in this new paradigm for data private multi-institutional collaborations and building upon our experience, we organize this tutorial on FL for healthcare.
 
 ## When and Where?
 
