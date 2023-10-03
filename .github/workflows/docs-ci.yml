@@ -1,9 +1,13 @@
-# Copied from https://github.com/mlcommons/medperf/blob/905e9fdeb33e10beb83307cde9d11040e8a33b0b/.github/workflows/docs-ci.yml
+# Copied and modified from https://github.com/mlcommons/medperf/blob/905e9fdeb33e10beb83307cde9d11040e8a33b0b/.github/workflows/docs-ci.yml
 name: docs-ci
 on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -13,6 +17,4 @@ jobs:
         with:
           python-version: "3.9"
       - run: pip install -r docs/requirements.txt
-      - run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - run: git config --global user.name "github-actions[bot]"
       - run: mkdocs gh-deploy --force
