@@ -8,50 +8,68 @@ The simulated use-case is ...
 
 The different roles/users are  ...
 
-While going through the simulated use-case from A to Z, the tutorial will be a mix of conceptual talks and hands-on execution of commands...
-
-## Admin-level Setup (THIS SHOULD GO TO THE PRESENTATION?)
-
-As we described in the presentation, here is the architecture:
-
-"visual showing auth backend, api server, and client"
-
-Already hosted are the main medperf server and the main medperf auth provider (auth0) managed by the MLCommons organization.
-
-But an admin (e.g. an organization staff) can host their medperf server and configure an auth provider...
-
-For the tutorial, we will be using a local MedPerf server and a local mocked auth provider.
+While going through the simulated use-case from A to Z, the tutorial will be a mix of conceptual talks and hands-on execution of commands.
 
 ## Experiment Inception phase
 
+### Experiment Documentation
+
 Document the experiment goals, timelines, expected outcomes, ...
 
-Cohort selection: Identify the needed data characteristics, write down instructions for hospitals to "onboard" this data.
-    - by the way... MedPerf is aiming to facilitate this step for the clinicians, e.g. integration of common clinical data storage frameworks with MedPerf, like XNAT PACS
+### Cohort Selection
 
-call for participation: spread out the experiment website and call for hospitals to be prepared to join. Prepare data agreements...
-    - note that medperf is aiming to facilitate streamlining data agreements...
-    - note that some hospitals will join to provide data for federated training, some for federated evaluation.
+Identify the needed data characteristics, write down instructions for hospitals to "onboard" this data.
+    - by the way... MedPerf is aiming to facilitate this step for the clinicians, e.g. integration of common clinical data storage frameworks with MedPerf, like XNAT and PACS
 
-Prepare the data preparation pipeline logic (mlcube-it) that will transform the raw clinical data into AI-ready data.
+Note that in our tutorial, the given data (run `ls workspace/data`) is considered in the stage after cohort selection.
 
-Prepare the metrics calculation logic (mlcube-it) that will be used for evaluation (after training) and benchmarking multiple trained models. This will basically define what does the experiment owner wants to measure and compare between models...
+### Call for Participation
 
-### Experiment Definition using OpenFL and GaNDLF
+spread out the experiment website and call for hospitals to be prepared to join. Prepare data agreements...
+    - note that medperf is aiming to facilitate streamlining "business" agreements... (TODO: find in paper)
 
-Prepare the training logic using OpenFL and GaNDLF:
-    - Here, some explanation and description of the OpenFL-GaNDLF MLCube. (THIS SHOULD GO TO THE PRESENTATION?)
-    - We should note that medperf is not only tied with OpenFL and GaNDLF. (THIS SHOULD GO TO THE PRESENTATION?)
-    - Talk about the used gandlf and openfl config.
+### Define and Prepare the Workflow Pieces
+
+- Prepare the data preparation pipeline logic that will transform the raw clinical data into AI-ready data. This will be an MLCube.
+  - Here is the `mlcube.yaml` and (some brief description of what the mlcube will do)
+
+- Prepare the metrics calculation logic that will be used for the evaluation and the benchmarking of multiple trained models on unseen data. This will basically define what the experiment owner wants to measure and compare between models. This will be an MLCube.
+  - Here is the `mlcube.yaml` and (some brief description of what the mlcube will do)
+
+#### Training Experiment Definition using OpenFL and GaNDLF
+
+- Prepare the training logic using OpenFL and GaNDLF:
+  - Here is the `mlcube.yaml`:
+  - Here is the OpenFL training plan:
+  - Here is the used GaNDLF config:
+
+## Admin Setup
+
+The MedPerf server should be up and running.
+
+As we described previously in the presentation, here is the architecture:
+
+"visual showing auth backend, api server, and client"
+
+For the tutorial, we will be using a local MedPerf server and a local mocked auth provider. The MedPerf client installed in your virtual machines is preconfigured to communicate with the local server.
+
+Check this by running `medperf profile view`. You will see `server: https://localhost:8000` and the auth configuration used is `Local`. In a real scenario, configuring the client would be only by changing the server and the auth configuration...
+
+## MedPerf Client Installation and Authentication
+
+All involved parties that intend to use the MedPerf client will have to signup for a MedPerf account, install the client, and login prior to using it.
+
+For our tutorial, we already setup the virtual machines with MedPerf preinstalled, and already created multiple profiles that each will correspond to a user. Through the tutorial, we will switch between users...
+Run `medperf profile ls` to view...
 
 ## Training Setup with MedPerf (Experiment Owner)
 
-MedPerf signup, install client, login
+Now we will start with defining the training experiment and registering it in the MedPerf server:
 
 Register the data preparation MLCube
 
 Register the training experiment
-    - The server admin should approve the experiment
+    - The server admin should approve the experiment (Run this hack: <...> to continue the tutorial)
 
 Register an aggregator
 
@@ -60,8 +78,6 @@ Associate the aggregator with the experiment
     - During this, aggregator certificate is created and signed
 
 ## Data preparation (Training Data Owner)
-
-MedPerf signup, install client, login
 
 Process your data using the data prep mlcube
 
@@ -75,6 +91,8 @@ Request participation in the training experiment
 Accept participation requests
     - During this, datasets certificates is signed
         - we note here that the current design is certificate per dataset, but we might change the design for scalability
+
+"Lock" the experiment
 
 Start the aggregator
 
@@ -91,15 +109,11 @@ Register a benchmark (i.e. an inference experiment) whose components are the the
 
 ## Participate as an algorithm owner (Some algorithm Owner)
 
-MedPerf signup, install client, login
-
 Register your model
 
 Request participation in the benchmark
 
 ## Participate as a data owner (Inference data Owner)
-
-MedPerf signup, install client, login
 
 Process your data using the data prep mlcube
 
