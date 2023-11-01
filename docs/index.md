@@ -14,11 +14,12 @@ In 2021, **COFE** was used to conduct the largest to-date real world federation,
 
 ## Upcoming Events
 
-- AAAI 2024 Bridge 
+- [Bridge Event at AAAI 2024](https://aaai.org/aaai-conference/aaai-24-bridge-list/#bp08)
 
 ## Past Events
 
 - Tutorial in [MICCAI 2023](https://conferences.miccai.org/2023/en/)
+- Tutorial in [MICCAI 2022](https://intel.github.io/fl-tutorial/)
 
 ## Organizing Committee 
 
